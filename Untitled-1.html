@@ -3,165 +3,194 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personality Quiz</title>
+  <title>Таны манлайлах хэв маяг юу вэ?</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 10px;
-      line-height: 1.5;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
     }
     form {
-      max-width: 400px;
+      max-width: 600px;
       margin: 0 auto;
     }
     .question {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+    }
+    .question p {
+      margin: 10px 0;
     }
     .result {
       font-weight: bold;
       margin-top: 20px;
       text-align: center;
+      color: #444;
     }
     .error {
       color: red;
       font-weight: bold;
     }
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .highlight {
+      border: 2px solid red;
+      border-radius: 5px;
+      padding: 5px;
+    }
   </style>
 </head>
 <body>
-  <h1 style="margin-bottom: 10px; text-align: center;">Таны манлайлах хэв маяг юу вэ?</h1> 
+  <h1>Таны манлайлах хэв маяг юу вэ?</h1>
   <form id="quizForm">
-    <div class="question">
+   
+    <div class="question" id="q1">
       <p><b>1. Өсөж том болох явцад тань...</b></p>
-      <label><input type="radio" name="q1" value="A"> А. Таны асран хамгаалагчид хүүхэд байхад чинь таны хэрэгцээнд төдийлөн анхаардаггүй байсан.</label><br>
-      <label><input type="radio" name="q1" value="B"> Б. Та гэр бүлийнхээ том хүмүүсийг дийлж чаддаг байсан.</label><br>
-      <label><input type="radio" name="q1" value="C"> В. Асран хамгаалагчдын тань аль нэг нь давуу эрхтэй байсан.</label><br>
-      <label><input type="radio" name="q1" value="D"> Г. Таны асран хамгаалагчдын дунд эрх ашгийн тэнцвэргүй байдал байсан.</label>
+      <label><input type="radio" name="q1" value="A"> А. Таны асран хамгаалагчид таны хэрэгцээнд анхаардаггүй байсан.</label><br>
+      <label><input type="radio" name="q1" value="B"> Б. Та гэр бүлийнхээ том хүмүүсийг дийлдэг байсан.</label><br>
+      <label><input type="radio" name="q1" value="C"> В. Асран хамгаалагчдын аль нэг нь давуу эрхтэй байсан.</label><br>
+      <label><input type="radio" name="q1" value="D"> Г. Асран хамгаалагчдын дунд эрх ашгийн зөрчил байсан.</label>
     </div>
-    <div class="question">
+   
+    <div class="question" id="q2">
       <p><b>2. Хүүхэд байхдаа та...</b></p>
-      <label><input type="radio" name="q2" value="A"> А. Насанд хүрсэн хүний үүрэг гүйцэтгэдэг байсан уу? (Жишээ нь: зуны амралтаараа ажил хийх эсвэл дүү нараа харах)</label><br>
-      <label><input type="radio" name="q2" value="B"> Б. Асран хамгаалагчдынхаа сэтгэл санааг дэмжигч гол хүн байсан.</label><br>
-      <label><input type="radio" name="q2" value="C"> В. Гэр бүлийнхээ хүчтэй хүнийг дуурайх гэж хичээдэг байсан.</label><br>
-      <label><input type="radio" name="q2" value="D"> Г. Асран хамгаалагчдынхаа статусын талаар асууснаар магтуулдаг байсан.</label>
+      <label><input type="radio" name="q2" value="A"> А. Насанд хүрсэн хүний үүрэг гүйцэтгэдэг байсан уу?</label><br>
+      <label><input type="radio" name="q2" value="B"> Б. Асран хамгаалагчдынхаа сэтгэл санааг дэмждэг байсан.</label><br>
+      <label><input type="radio" name="q2" value="C"> В. Гэр бүлийн хүчтэй хүнийг дуурайх гэж хичээдэг байсан.</label><br>
+      <label><input type="radio" name="q2" value="D"> Г. Асран хамгаалагчдынхаа статусыг магтуулахыг хичээдэг байсан.</label>
     </div>
-    <div class="question">
+   
+    <div class="question" id="q3">
       <p><b>3. Ажил дээрээ та...</b></p>
-      <label><input type="radio" name="q3" value="A"> А. Бусдын хийх дүргүй зайлсхийдэг ажлыг тогтмол хийдэг.</label><br>
+      <label><input type="radio" name="q3" value="A"> А. Бусдын хийхийг хүсдэггүй ажлыг хийдэг.</label><br>
       <label><input type="radio" name="q3" value="B"> Б. Үйл явцаас илүү үр дүнд анхаардаг.</label><br>
-      <label><input type="radio" name="q3" value="C"> В. Бусдаас илүү хурдан урагшлаад байгаа мэт санагддаг.</label><br>
-      <label><input type="radio" name="q3" value="D"> Г. Удирдах албан тушаалтнуудаас нийтлэг давуу талыг авч үзэх төдийгүй бусад чухал зүйлсийг ч анхаараасай гэж хүлээдэг.</label>
+      <label><input type="radio" name="q3" value="C"> В. Бусдаас илүү хурдан урагшилдаг мэт санагддаг.</label><br>
+      <label><input type="radio" name="q3" value="D"> Г. Хуучирсан зүйлийг эхэлж олж хардаг.</label>
     </div>
-    <div class="question">
+   
+    <div class="question" id="q4">
       <p><b>4. Ажлын байран дээрээ та...</b></p>
-      <label><input type="radio" name="q4" value="A"> А. Хэрвээ үл тоомсорлуулж, бага цалин авч, шудрага бус байдалтай учирвал өөрийгөө хамгаалж дуугарахад хэцүү байдаг.</label><br>
-      <label><input type="radio" name="q4" value="B"> Б. Өөрт хэрэггүй гэж үзсэн хурлуудаас зайлсхийдэг.</label><br>
-      <label><input type="radio" name="q4" value="C"> В. Таны хариу үйлдэл, өнгө аяс бусдыг айлгасан гэсэн гомдол, санал авч бусдыг байсан.</label><br>
-      <label><input type="radio" name="q4" value="D"> Г. Хуучирч хоцрогдсон зүйлсийг олж хардаг эхний хүн байдаг.</label>
+      <label><input type="radio" name="q4" value="A"> А. Өөрийгөө хамгаалах нь хэцүү байдаг.</label><br>
+      <label><input type="radio" name="q4" value="B"> Б. Үр дүнгүй хурлуудаас зайлсхийдэг.</label><br>
+      <label><input type="radio" name="q4" value="C"> В. Бусдыг айлгасан санал, гомдол сонсдог.</label><br>
+      <label><input type="radio" name="q4" value="D"> Г. Шинийг санаачлагч нь байдаг.</label>
     </div>
-    <div class="question">
+    
+    <div class="question" id="q5">
       <p><b>5. Хамтран ажиллагсадтайгаа харьцахдаа та...</b></p>
       <label><input type="radio" name="q5" value="A"> А. Бусдын орхигдуулдаг нарийн зүйлсийг анзаардаг.</label><br>
-      <label><input type="radio" name="q5" value="B"> Б. Хэт их ачааллын үед хамт олноосоо холддог.</label><br>
-      <label><input type="radio" name="q5" value="C"> В. Албан ёсны удирдлага байхгүй үед таны бодлыг асуудаг эсэх.</label><br>
-      <label><input type="radio" name="q5" value="D"> Г. Бусдын гаргасан санаа, хувь нэмрийг заавал үнэлж сайшаадаг.</label>
+      <label><input type="radio" name="q5" value="B"> Б. Ачааллын үед холддог.</label><br>
+      <label><input type="radio" name="q5" value="C"> В. Удирдлага байхгүй үед таныг сонсдог.</label><br>
+      <label><input type="radio" name="q5" value="D"> Г. Бусдын хувь нэмрийг үнэлдэг.</label>
     </div>
-    <div>
 
-
-
-      <button type="button" onclick="calculateResult()">Submit</button>
-    </div>
+    <button type="button" onclick="calculateResult()">Submit</button>
   </form>
+  <div id="result" class="result"></div>
 
   <script>
-   function calculateResult() {
+    
+    function calculateResult() {
   const form = document.getElementById('quizForm');
   const answers = new FormData(form);
   const counts = { A: 0, B: 0, C: 0, D: 0 };
   let allAnswered = true;
 
+  
   for (let i = 1; i <= 5; i++) {
     if (!answers.has('q' + i)) {
       allAnswered = false;
-      break;
     }
   }
 
   if (!allAnswered) {
-    alert("Та бүх асуултад хариулна уу."); 
+    alert("Та бүх асуултад хариулна уу.");
     return;
   }
+
 
   for (let value of answers.values()) {
     counts[value]++;
   }
 
-  let result;
-  if (counts.A >= 3) result = `
-    Та 'Pleaser' хүн юм. 
-    <p>“Pleaser” хэв маяг нь бусадтай илүү дотно холбогдох замаар эрх мэдлийг бий болгодог хүмүүс юм. 
-    Энэ хэв маягийн гол цөм нь гэр бүлийн ямар нэгэн гачигдалд байдаг. Санхүүгийн асуудлаас эхлээд өвчтэй 
-    гэр бүлийн гишүүнтэй байсан гэх мэт гадны хүчин зүйлсийн улмаас энэ хэв маягийн хүмүүс амьдралынхаа 
-    эхэн үед асран хамгаалагчдаасаа анхаарал халамж авч чадаагүй байдаг. Үүний үр дүнд эдгээр хүмүүс 
-    ихэвчлэн бусдаар хүлээн зөвшөөрөгдөх маш их хэрэгцээтэй байдаг ба бусдад анхаарал халамж тавихаар 
-    бүтээгдсэн байдаг.</p>`;
 
-  else if (counts.B >= 3) result = `
-    "Та 'Charmer' хүн юм.
-    <p>“Charmer” хэв маяг нь бусдыг өөртөө татахад маш их анхаардаг хүмүүс байдаг. 
-    Тэд дийлэнхдээ удирдлага, захиргааг тэр бүр хүндэлдэггүй. 
-    Учир нь тэд хүүхэд ахуй насандаа сэтгэл санааны хувьд тусламж хэрэгтэй асран хамгаалагчаа тайвшруулах үүрэгтэй байсан ба 
-    тэд ямар нэгэн асуудалтай эсвэл хэвийн энгийн гэр бүл ч байсан гэсэн асран хамгаалагчдынх нь аль нэг нь хамтрагчаасаа илүү хүүхдээсээ сэтгэл санааны дэмжлэг авдаг байсан байдаг. 
-    Тиймээс тэд ихэвчлэн яаж бусдыг удирдаж өөрийнхөөрөө чиглүүлж хүссэн зүйлээ авахыг сурсан байдаг.</p>"`;
-  
-    else if (counts.C >= 3) result = `
-     "Та 'Commander' хүн юм."
-      <p>“Commander” хэв маяг нь эцсийн үр дүнд илүү анхаарч ажилладаг бөгөөд бусдыг яаруулах шахах мэдрэмжийг төрүүлэх хандлагатай байдаг. 
-      Тэд дүрэм журмыг чанд сахидаг, эрх мэдлийн хатуу шатлалтай гэр бүлээс гаралтай байх магадлалтай. 
+  let result = "";
+  if (counts.A >= 3) {
+    result = `
+      <h1>Та 'Pleaser' хүн юм.</h1>
+      <p>“Pleaser” хэв маяг нь бусадтай илүү дотно холбогдох замаар эрх мэдлийг бий болгодог хүмүүс юм.
+      Энэ хэв маягийн гол цөм нь гэр бүлийн ямар нэгэн гачигдалд байдаг. Санхүүгийн асуудлаас эхлээд өвчтэй гэр бүлийн гишүүнтэй байсан гэх мэт
+      гадны хүчин зүйлсийн улмаас энэ хэв маягийн хүмүүс амьдралынхаа эхэн үед асран хамгаалагчдаасаа анхаарал халамж авч чадаагүй байдаг. Үүний үр дүнд эдгээр хүмүүс
+      ихэвчлэн бусдаар хүлээн зөвшөөрөгдөх маш их хэрэгцээтэй байдаг ба бусдад анхаарал халамж тавихаар бүтээгдсэн байдаг.</p>`;
+  } else if (counts.B >= 3) {
+    result = `
+      <h1>Та 'Charmer' хүн юм.</h1>
+      <p>“Charmer” хэв маяг нь бусдыг өөртөө татахад маш их анхаардаг хүмүүс байдаг.
+      Тэд дийлэнхдээ удирдлага, захиргааг тэр бүр хүндэлдэггүй.
+      Учир нь тэд хүүхэд ахуй насандаа сэтгэл санааны хувьд тусламж хэрэгтэй асран хамгаалагчаа тайвшруулах үүрэгтэй байсан ба
+      тэд ямар нэгэн асуудалтай эсвэл хэвийн энгийн гэр бүл ч байсан гэсэн асран хамгаалагчдынх нь аль нэг нь хамтрагчаасаа илүү хүүхдээсээ сэтгэл санааны дэмжлэг авдаг байсан байдаг.
+      Тиймээс тэд ихэвчлэн яаж бусдыг удирдаж өөрийнхөөрөө чиглүүлж хүссэн зүйлээ авахыг сурсан байдаг.</p>`;
+  } else if (counts.C >= 3) {
+    result = `
+      <h1>Та 'Commander' хүн юм.</h1>
+      <p>“Commander” хэв маяг нь эцсийн үр дүнд илүү анхаарч ажилладаг бөгөөд бусдыг яаруулах шахах мэдрэмжийг төрүүлэх хандлагатай байдаг.
+      Тэд дүрэм журмыг чанд сахидаг, эрх мэдлийн хатуу шатлалтай гэр бүлээс гаралтай байх магадлалтай.
       Ихэвчлэн спорт, шашин шүтлэг, цэрэг арми эсвэл маш хатуу дүрэм журамтай гэр бүлийн тогтолцоонд өссөн байдаг.</p>`;
+  } else if (counts.D >= 3) {
+    result = `
+      <h1>Та 'Inspirer' хүн юм.</h1>
+      <p>“Inspirer” хэв маяг нь шинийг сэтгэгчид, сайн сайхны төлөө тууштай ажилладаг хүмүүс байдаг.
+      Тэд өөртөө юу ашигтайг ч тооцоололгүй бусад хүмүүсийг дэмждэг. Энэ хэв маягийн хүмүүс ихэвчлэн өөрийгөө сайн илэрхийлдэг урлагийн эсвэл шинжлэх ухааны ажил хийдэг гэр бүлд өссөн байдаг
+      ба ажил мэргэжлийнхээ хувьд өндөр түвшинд хүрэхийн төлөө өөрийгөө золиослоход ч бэлэн асран хамгаалагчидтай байсан байдаг.</p>`;
+  } else {
+    result = `
+      <h1>Таны сонголт тодорхой үр дүн өгөөгүй.</h1>
+      <p>Та асуултуудыг өөр хариултаар бөглөж дахин туршиж үзээрэй.</p>`;
+  }
 
-  else if (counts.D >= 3) result = ` 
-    "Та 'Inspirer' хүн юм." 
-    <p>“Inspirer” хэв маяг нь шинийг сэтгэгчид, сайн сайхны төлөө тууштай ажилладаг хүмүүс байдаг. 
-    Тэд өөртөө юу ашигтайг  ч тооцоололгүй бусад хүмүүсийг дэмждэг. Энэ хэв маягийн хүмүүс ихэвчлэн өөрийгөө сайн илэрхийлдэг урлагийн эсвэл шинжлэх ухааны ажил хийдэг гэр бүлд өссөн байдаг 
-    ба ажил мэргэжлийнхээ хувьд өндөр түвшинд хүрэхийн төлөө өөрийгөө золиослоход ч бэлэн  асран хамгаалагчидтай байсан байдаг.</P>`;
-  
-    else result = "Таны сонголт тодорхой үр дүн өгөөгүй.";
-
-  const newTab = window.open();
-  newTab.document.write(`
+  const resultWindow = window.open("", "_blank", "width=800,height=600");
+  resultWindow.document.write(`
     <html>
       <head>
-        <title>Quiz Result</title>
+        <title>Үр дүн</title>
         <style>
           body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
             font-family: Arial, sans-serif;
             text-align: center;
-            line-height: 1.5;
+            background: linear-gradient(to right, #d4fc79, #96e6a1); /* Light Green to Soft Blue */
+            color: #333;
+            padding: 20px;
           }
           h1 {
-            margin-bottom: 10px;
+            font-size: 2em;
           }
           p {
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 1.2em;
           }
         </style>
       </head>
       <body>
-        <h1>Таны манлайлах хэв маяг бол</h1>
-        <p>${result}</p>
+        ${result}
       </body>
     </html>
   `);
-  newTab.document.close();
+  resultWindow.document.close();
 }
 
   </script>
